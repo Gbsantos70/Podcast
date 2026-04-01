@@ -1,0 +1,208 @@
+:root {
+    --bg-geral: #0e0a19;
+    --bg-component: #240439;
+    --color-text-destaque: #f2f9ff;
+    --color-text-descricao: lightgray;
+    --color-accent: #0f8f72;
+    --spacing-sm: 16px;
+    --spacing-md: 20px;
+    --spacing-lg: 32px;
+    --border-radius: 16px;
+    --transition-duration: 0.3s;
+}
+
+
+body {
+    background-color: var(--bg-geral);
+    color: var(--color-text-destaque);
+    font-family: 'Passero One', monospace;
+    text-shadow: 1px 1px 2px #000;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm);
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-component);
+    z-index: 1000;
+    border-bottom: 1px solid #1f1a3f;
+}
+
+.header h1 {
+    font-size: 1.7rem;
+
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.info {
+    margin-top: 10px;
+    display: flex;
+    gap: var(--spacing-sm);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.info a {
+    color: var(--color-text-destaque);
+    text-decoration: none;
+    display: flex;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+}
+
+.info a:hover {
+    color: var(--color-accent);
+    cursor: pointer;
+    transition: var(--transition-duration);
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+.no-break {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+.container-geral {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+}
+
+.video-principal {
+    text-align: center;
+    margin: var(--spacing-md);
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-component);
+    max-width: 100%;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: var(--border-radius);
+}
+
+.episodios {
+    text-align: center;
+    border-top: 1px solid var(--bg-component);
+    padding-top: var(--spacing-md);
+}
+
+.container {
+    display: flex;
+    gap: var(--spacing-sm);
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#Card-episodios {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.card-ep {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-component);
+    border: none;
+    flex-direction: column;
+}
+
+.card-ep h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-text-destaque);
+}
+
+.card-ep p {
+    font-size: 1.0rem;
+    color: var(--color-text-descricao);
+}
+
+.card-ep span {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    color: var(--color-text-descricao);
+}
+
+.card-ep:hover {
+    background-color: var(--color-accent);
+    cursor: pointer;
+    transition: var(--transition-duration);
+}
+
+.integrantes {
+    margin: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    gap: var(--spacing-sm);
+    text-align: center;
+    background-color: var(--bg-component);
+}
+
+.card-integrantes h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.container-integrantes {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--spacing-sm);
+}
+
+.card-integrantes {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-geral);
+    border: none;
+    flex: 1;
+    text-align: center;
+    transition: background-color var(--transition-duration);
+}
+
+.card-integrantes:hover {
+    background-color: var(--color-accent);
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--bg-component);
+}
+
+/* Para telas menores    */
+
+@media(max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+}
