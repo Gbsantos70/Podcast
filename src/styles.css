@@ -1,3 +1,7 @@
+/* =============================================
+   VARIÁVEIS E RESET GLOBAL
+   ============================================= */
+
 :root {
     --bg-geral: #0e0a19;
     --bg-component: #240439;
@@ -11,6 +15,15 @@
     --transition-duration: 0.3s;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: var(--bg-geral);
@@ -19,17 +32,26 @@ body {
     text-shadow: 1px 1px 2px #000;
 }
 
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+h2 {
+    font-size: 1.5rem;
 }
 
-
-html {
-    scroll-behavior: smooth;
+.container-geral {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
 }
+
+.no-break {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+/* =============================================
+   HEADER E NAVEGAÇÃO
+   ============================================= */
 
 header {
     display: flex;
@@ -45,11 +67,6 @@ header {
 
 .header h1 {
     font-size: 1.7rem;
-
-}
-
-h2 {
-    font-size: 1.5rem;
 }
 
 .info {
@@ -75,18 +92,9 @@ h2 {
     background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
 }
 
-.no-break {
-    white-space: nowrap;
-    overflow-wrap: normal;
-    word-break: keep-all;
-}
-
-.container-geral {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    padding: 0 var(--spacing-sm);
-}
+/* =============================================
+   VÍDEO PRINCIPAL
+   ============================================= */
 
 .video-principal {
     text-align: center;
@@ -95,7 +103,7 @@ h2 {
     border: none;
     border-radius: var(--border-radius);
     background-color: var(--bg-component);
-    max-width: 100%;
+    padding-bottom: var(--spacing-lg);
 }
 
 iframe {
@@ -103,6 +111,17 @@ iframe {
     aspect-ratio: 16/9;
     border-radius: var(--border-radius);
 }
+
+.play {
+    max-width: 550px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* =============================================
+   SEÇÃO EPISÓDIOS
+   ============================================= */
 
 .episodios {
     text-align: center;
@@ -123,6 +142,8 @@ iframe {
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-md) var(--spacing-lg);
+    max-width: 85%;
+    margin: 0 auto;
 }
 
 .card-ep {
@@ -133,6 +154,7 @@ iframe {
     background-color: var(--bg-component);
     border: none;
     flex-direction: column;
+    transition: background-color var(--transition-duration);
 }
 
 .card-ep h3 {
@@ -155,8 +177,11 @@ iframe {
 .card-ep:hover {
     background-color: var(--color-accent);
     cursor: pointer;
-    transition: var(--transition-duration);
 }
+
+/* =============================================
+   SEÇÃO INTEGRANTES
+   ============================================= */
 
 .integrantes {
     margin: var(--spacing-md);
@@ -167,25 +192,31 @@ iframe {
     background-color: var(--bg-component);
 }
 
-.card-integrantes h3 {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
 .container-integrantes {
     flex-wrap: wrap;
     justify-content: center;
     padding: var(--spacing-sm);
+    display: flex;
 }
 
 .card-integrantes {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
     border-radius: var(--border-radius);
     background-color: var(--bg-geral);
     border: none;
-    flex: 1;
+    flex-direction: column;
     text-align: center;
     transition: background-color var(--transition-duration);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.card-integrantes h3 {
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .card-integrantes:hover {
@@ -193,16 +224,40 @@ iframe {
     cursor: pointer;
 }
 
+/* =============================================
+   FOOTER
+   ============================================= */
+
 footer {
     text-align: center;
     padding: var(--spacing-sm) var(--spacing-md);
     background-color: var(--bg-component);
 }
 
-/* Para telas menores    */
+/* =============================================
+   RESPONSIVIDADE (TELAS MENORES)
+   ============================================= */
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
+    .card-integrantes {
+        min-height: auto;
+        flex: none;
+        width: 100%;
+    }
+
     header {
         flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    .header h1{
+        font-size: 1.3rem;
     }
 }
