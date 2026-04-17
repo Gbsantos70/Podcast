@@ -163,9 +163,12 @@ iframe {
     color: var(--color-text-destaque);
 }
 
-.card-ep p {
+.card-ep .descricao-expandida {
     font-size: 1.0rem;
     color: var(--color-text-descricao);
+      max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-duration)
 }
 
 .card-ep span {
@@ -177,12 +180,6 @@ iframe {
 .card-ep:hover {
     background-color: var(--color-accent);
     cursor: pointer;
-}
-
-.descricao-expandida {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-duration)
 }
 
 
