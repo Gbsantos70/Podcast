@@ -12,7 +12,7 @@
     --spacing-md: 20px;
     --spacing-lg: 32px;
     --border-radius: 16px;
-    --transition-duration: 0.3s;
+    --transition-duration: 0.5s;
 }
 
 * {
@@ -179,6 +179,14 @@ iframe {
     cursor: pointer;
 }
 
+.descricao-expandida {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-duration)
+}
+
+
+
 /* =============================================
    SEÇÃO INTEGRANTES
    ============================================= */
@@ -257,7 +265,7 @@ footer {
         font-size: 0.9rem;
     }
 
-    .header h1{
+    .header h1 {
         font-size: 1.3rem;
     }
 }
