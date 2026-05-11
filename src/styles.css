@@ -166,7 +166,7 @@ iframe {
 .card-ep .descricao-expandida {
     font-size: 1.0rem;
     color: var(--color-text-descricao);
-      max-height: 0;
+    max-height: 0;
     overflow: hidden;
     transition: max-height var(--transition-duration)
 }
@@ -234,6 +234,19 @@ iframe {
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.integrantes .integrante-expandido {
+    font-size: 1.0rem;
+    color: var(--color-text-descricao);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-duration)
+}
+
+.card-integrantes p {
+    margin-top: var(--spacing-sm);
+    color: var(--color-text-descricao);
 }
 
 /* =============================================
