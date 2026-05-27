@@ -250,6 +250,20 @@ iframe {
     color: var(--color-text-descricao);
 }
 
+.perfil{
+    padding: var(--spacing-md);
+}
+
+.perfil img{
+    object-fit: cover;
+    width: 250px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
 /* =============================================
    FOOTER
    ============================================= */
